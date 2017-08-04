@@ -1,0 +1,46 @@
+{
+  "name": "peep-backend",
+  "description": "A Backend Server For the Peep Applications",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "DIREKTSPEED <frank@dspeed.eu>",
+    "email": "frank@dspeed.eu",
+    "url": "https://dspeed.eu"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive",
+    "build": "node build && rsync -avzh ./dist/ markus:/srv/peep-server",
+    "deploy": "rsync -avzh ./ markus:/srv/drivers/custom-tl80",
+    "info": "CUSTOM_Engineering_TL60"
+  },
+  "dependencies": {
+    "ncups": "^0.2.0",
+    "ncups": "^0.1.2",
+    "eslint": "^3.19.0",
+    "helmet": "^3.5.0",
+    "mocha": "^3.3.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0",
+    "serve-favicon": "^2.4.2",
+    "socket.io": "^2.0.3",
+    "socket.io-events": "^0.4.6",
+    "winston": "^2.3.1"
+  }
+}
